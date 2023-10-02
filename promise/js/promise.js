@@ -117,29 +117,39 @@
 //   console.log(a);
 // });
 
-// fetch api used to get information from network
+// // fetch api used to get information from network
 
-let p = fetch("https://goweather.herokuapp.com/weather/ny");
-p.then((response) => {
-  console.log(response.status);
-  console.log(response.ok);
-  return response.json();
-}).then((value2) => {
-  console.log(value2);
-});
+// let p = fetch("https://goweather.herokuapp.com/weather/ny");
+// p.then((response) => {
+//   console.log(response.status);
+//   console.log(response.ok);
+//   return response.json();
+// }).then((value2) => {
+//   console.log(value2);
+// });
 
-// sending post request with fetch api
-let option = {
-  method: "POST",
-  headers: {
-    "Content-type": "application/json",
-  },
-  body: JSON.stringify({
-    title: "preet",
-    body: "singh",
-    userId: 1,
-  }),
-};
-fetch("https://jsonplaceholder.typicode.com/posts", option)
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+// // sending post request with fetch api
+// let option = {
+//   method: "POST",
+//   headers: {
+//     "Content-type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     title: "preet",
+//     body: "singh",
+//     userId: 1,
+//   }),
+// };
+// fetch("https://jsonplaceholder.typicode.com/posts", option)
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+//cookies in js
+console.log(document.cookie);
+document.cookie = "name=preet123";
+document.cookie = "name=preet456";
+document.cookie = "name=preet789";
+let key = prompt("Enter your key");
+let value = prompt("Enter your value");
+document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}`;
+console.log(document.cookie);
