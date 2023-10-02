@@ -145,11 +145,23 @@
 //   .then((json) => console.log(json));
 
 //cookies in js
-console.log(document.cookie);
-document.cookie = "name=preet123";
-document.cookie = "name=preet456";
-document.cookie = "name=preet789";
-let key = prompt("Enter your key");
-let value = prompt("Enter your value");
-document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}`;
-console.log(document.cookie);
+// console.log(document.cookie);
+// document.cookie = "name=preet123";
+// document.cookie = "name=preet456";
+// document.cookie = "name=preet789";
+// let key = prompt("Enter your key");
+// let value = prompt("Enter your value");
+// document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}`;
+// console.log(document.cookie);
+
+// localstorage and related methods
+let key = prompt("enter key you want to set");
+let value = prompt("enter value you want to set");
+localStorage.setItem(key, value);
+console.log(`The value at ${key} is ${localStorage.getItem(key)}`);
+if (key == "red" || key == "blue") {
+  localStorage.removeItem(key);
+}
+if (key == 0) {
+  localStorage.clear();
+}
