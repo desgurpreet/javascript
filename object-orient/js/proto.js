@@ -133,3 +133,18 @@ class programmer extends employee {
 let e = new programmer();
 e.login();
 e.requestLeaves(3);
+
+// static method
+class bird {
+  constructor(name) {
+    this.name = bird.capitalize(name);
+  }
+  fly() {
+    alert("Bird " + this.name + " is flying");
+  }
+  static capitalize(name) {
+    return name.charAt(0).toUpperCase() + name.substr(1, name.length);
+  }
+}
+let j = new bird("Peacock");
+j.fly();
