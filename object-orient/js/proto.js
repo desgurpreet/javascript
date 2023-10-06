@@ -85,3 +85,51 @@ let preet = new railwayForm("gurpreet", 23432, "234,amar nagar,amritsar");
 preet.submit();
 preet.cancel();
 preet.preview();
+
+// extend and inheritance
+class animal {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+  run() {
+    console.log(this.name + "is running");
+  }
+  shout() {
+    console.log(this.name + "is shouting");
+  }
+}
+class monkey extends animal {
+  eatBanana() {
+    console.log(this.name + " is eating banana");
+  }
+}
+let ani = new animal("bruno", "white");
+let m = new monkey("chimpu", "orange");
+ani.run();
+m.eatBanana();
+
+// overridding method
+class employee {
+  login() {
+    console.log(`Employee has logged in`);
+  }
+  logout() {
+    console.log(`Employee has logged out`);
+  }
+  requestLeaves(leaves) {
+    console.log(`Employee has requested ${leaves} leaves`);
+  }
+}
+class programmer extends employee {
+  requestCoffee(x) {
+    console.log(`Employee has request ${x} coffee`);
+  }
+  requestLeaves(leaves) {
+    super.requestLeaves(4);
+    console.log(`one extra leave granted`);
+  }
+}
+let e = new employee();
+e.login();
+e.requestLeaves(5);
