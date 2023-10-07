@@ -148,3 +148,27 @@ class bird {
 }
 let j = new bird("Peacock");
 j.fly();
+
+//  getter,setter and instance operator
+class my {
+  constructor(name1) {
+    this._name1 = name1;
+  }
+  hobby() {
+    console.log("watch cartoon");
+  }
+  get name1() {
+    return this_name1;
+  }
+  set name1(newName) {
+    this._name1 = newName;
+  }
+}
+let a = new my("garry");
+a.hobby();
+console.log(a._name1);
+a.name1 = "gagan";
+console.log(a._name1);
+let c = 34;
+console.log(a instanceof my);
+console.log(c instanceof my);
