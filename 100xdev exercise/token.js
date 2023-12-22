@@ -44,6 +44,7 @@ app.get("/users", function (req, res) {
   try {
     const decoded = jwt.verify(token, "pqrs");
     const user_name = decoded.user_name;
+    console.log(user_name);
     res.json({
       users: all_users.filter(function (value) {
         if (value.user_name == user_name) {
