@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script>
+      async function add() {
+        const a = document.getElementById("firstNum").value;
+        const b = document.getElementById("secondNum").value;
+        const response = await fetch(
+          "https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b
+        );
+        const ans = await response.text();
+        document.getElementById("finalSum").innerHTML = ans;
+      }
+      async function Interest() {
+        const principal = document.getElementById("principal").value;
+        const rate = document.getElementById("rate").value;
+        const time = document.getElementById("time").value;
+        const response = await fetch(
+          "https://sum-server.100xdevs.com/interest?principal=" +
+            principal +
+            "&rate=" +
+            rate +
+            "&time" +
+            time
+        );
+        const ans = await response.text();
+        document.getElementById("finalInterest").innerHTML = ans;
+      }
+    </script>
+    <body>
+      <input type="text" id="firstNum" placeholder="First Number" /><br /><br />
+      <input
+        type="text"
+        id="secondNum"
+        placeholder="Second Number"
+      /><br /><br />
+      <button onclick="add()">Calculate sum</button><br /><br />
+      <div id="finalSum"></div>
+
+      <input
+        type="text"
+        id="principal"
+        placeholder="Enter amonut"
+      /><br /><br />
+      <input type="text" id="rate" placeholder="enter the rate" /><br /><br />
+      <input type="text" id="time" placeholder="enter the time" /><br /><br />
+      <button onclick="Interest()">Calculate interest</button><br /><br />
+      <div id="finalInterest"></div>
+    </body>
+  </head>
+</html>

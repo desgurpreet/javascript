@@ -46,5 +46,5 @@ function decodeJwt(token) {
     return false;
   }
 }
-const ans2=decodeJwt("hkdkhfsj");
-console.log(ans2)
+const ans2 = decodeJwt("hkdkhfsj");
+console.log(ans2);
